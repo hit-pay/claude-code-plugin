@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "hitpay-api": {
+      "type": "http",
+      "url": "https://hitpay-mcp.vercel.app/api/mcp",
+      "headers": {
+        "x-hitpay-api-key": "${HITPAY_API_KEY}",
+        "x-hitpay-environment": "${HITPAY_ENV:-sandbox}"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "hitpay",
+  "description": "Zero-config SEA payment integration — PayNow, GrabPay, FPX, DuitNow, GCash, Maya, QRIS & 50+ methods via skills + MCP",
+  "version": "1.0.0",
+  "author": { "name": "HitPay", "url": "https://hitpayapp.com" },
+  "homepage": "https://docs.hitpayapp.com",
+  "repository": "https://github.com/hit-pay/claude-code-plugin",
+  "license": "MIT"
+}
