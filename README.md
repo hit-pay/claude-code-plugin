@@ -7,8 +7,8 @@ Zero-config SEA payment integration for Claude Code. Gives Claude deep knowledge
 | Layer | What It Does | Files |
 |-------|-------------|-------|
 | **MCP Server** | Live API access — create payments, check statuses, query account | `.mcp.json` |
-| **Skills** | Teach Claude correct code patterns for HitPay integration | `skills/` (4 skills) |
-| **Commands** | Developer actions — scaffold, lookup, test | `commands/` (3 commands) |
+| **Skills** | Teach Claude correct code patterns for HitPay integration | `skills/` (5 skills) |
+| **Commands** | Developer actions — scaffold, lookup, test, QR checkout | `commands/` (4 commands) |
 
 ## Installation
 
@@ -47,6 +47,7 @@ Skills are auto-invoked when Claude detects relevant context in your conversatio
 | **webhook-handler** | "webhook signature", "payment notification", "verify webhook" | HMAC-SHA256 verification, event types, IP allowlisting, idempotency |
 | **payment-methods** | "methods in Malaysia", "which payment methods", "supported methods" | Country-to-method mapping, API values, currencies, unavailable methods |
 | **drop-in-ui** | "embed payment form", "HitPay.js", "checkout popup" | HitPay.js script, init options, Next.js integration, event handling |
+| **qr-checkout** | "QR checkout page", "QR payment page", "show QR code for PayNow" | Pre-rendered QR images, local HTML page, offline-capable, no CDN |
 
 ## Commands
 
@@ -55,6 +56,7 @@ Skills are auto-invoked when Claude detects relevant context in your conversatio
 | `/hitpay:init` | Scaffold a complete integration | `/hitpay:init nextjs sg,my` |
 | `/hitpay:methods` | Look up payment methods by country | `/hitpay:methods ph` |
 | `/hitpay:webhook-test` | Generate test webhook payload + curl | `/hitpay:webhook-test charge.created` |
+| `/hitpay:qr-checkout` | Generate QR payment page with scannable codes | `/hitpay:qr-checkout 100 sgd paynow,qris` |
 
 ## MCP Tools
 

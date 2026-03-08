@@ -17,11 +17,14 @@ hitpay-plugin/
 │   ├── payment-integration/      # API routes, checkout flows, auth
 │   ├── webhook-handler/          # Signature verification, event processing
 │   ├── payment-methods/          # Country-to-method lookup tables
-│   └── drop-in-ui/              # HitPay.js embedded checkout
+│   ├── drop-in-ui/              # HitPay.js embedded checkout
+│   └── qr-checkout/             # Local QR checkout page generator
+│       └── references/html-template.md
 └── commands/                     # Developer-facing slash commands
     ├── init.md                   # /hitpay:init — scaffold integration
     ├── methods.md                # /hitpay:methods — lookup methods
-    └── webhook-test.md           # /hitpay:webhook-test — test payloads
+    ├── webhook-test.md           # /hitpay:webhook-test — test payloads
+    └── qr-checkout.md            # /hitpay:qr-checkout — QR payment page
 ```
 
 ## Core Principles
@@ -87,11 +90,13 @@ claude --debug --plugin-dir ./hitpay-plugin
 # Ask: "verify webhook signature" → webhook-handler
 # Ask: "what methods in Malaysia" → payment-methods
 # Ask: "embed payment form" → drop-in-ui
+# Ask: "create QR checkout page for PayNow" → qr-checkout
 
 # Test commands
 # /hitpay:init nextjs sg
 # /hitpay:methods ph
 # /hitpay:webhook-test payment_request.completed
+# /hitpay:qr-checkout 100 sgd paynow,qris,promptpay
 ```
 
 ## Git Workflow
