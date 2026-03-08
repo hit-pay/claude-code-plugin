@@ -1,0 +1,27 @@
+{
+  "name": "hitpay-plugins",
+  "owner": {
+    "name": "HitPay",
+    "email": "engineering@hit-pay.com"
+  },
+  "metadata": {
+    "description": "Official HitPay payment integration plugins for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "hitpay",
+      "source": "./",
+      "description": "Zero-config SEA payment integration — PayNow, GrabPay, FPX, DuitNow, GCash, Maya, QRIS & 50+ methods via skills + MCP",
+      "version": "1.0.0",
+      "author": {
+        "name": "HitPay",
+        "email": "engineering@hit-pay.com"
+      },
+      "homepage": "https://docs.hitpayapp.com",
+      "repository": "https://github.com/hit-pay/claude-code-plugin",
+      "license": "MIT",
+      "keywords": ["payments", "fintech", "southeast-asia", "paynow", "grabpay", "qris", "gcash", "fpx"],
+      "category": "payments"
+    }
+  ]
+}

@@ -12,10 +12,11 @@ Zero-config SEA payment integration for Claude Code. Gives Claude deep knowledge
 
 ## Installation
 
-### From Marketplace
+### Via Marketplace (recommended)
 
-```bash
-claude plugin install hitpay
+```
+/plugin marketplace add hit-pay/claude-code-plugin
+/plugin install hitpay@hitpay-plugins
 ```
 
 ### Local Development
