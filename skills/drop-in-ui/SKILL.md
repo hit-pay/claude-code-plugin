@@ -9,7 +9,7 @@ metadata:
 
 # HitPay Drop-In UI
 
-Embed HitPay's hosted checkout as a modal overlay on your site using HitPay.js. The Drop-In handles payment method selection, card input, QR display, and 3DS — no PCI scope required.
+Embed HitPay's hosted checkout as a modal overlay on your site using HitPay.js. The Drop-In is best suited for **QR-based payment methods** (PayNow, GrabPay, ShopeePay, etc.) — no PCI scope required. For card payments, Apple Pay, or Google Pay, use the redirect checkout flow instead.
 
 ## When to Apply
 
@@ -24,12 +24,15 @@ Embed HitPay's hosted checkout as a modal overlay on your site using HitPay.js. 
 
 | Approach | Best For | PCI Scope | Customization |
 |----------|----------|-----------|---------------|
-| **Drop-In UI** | Quick integration, all-in-one checkout | None | Limited (colors, logo) |
-| **Redirect** | Card payments, full HitPay-hosted checkout | None | None (HitPay page) |
+| **Drop-In UI** | QR-based methods (PayNow, GrabPay, ShopeePay, etc.) | None | Limited (colors, logo) |
+| **Redirect** | Card payments, Apple Pay, Google Pay | None | None (HitPay page) |
 | **Embedded QR** | QR-only payments, custom UI | None | Full control |
 
+> **Important:** Drop-In UI is recommended for **QR-based payment methods only**. For card payments, use the **redirect** flow — 3DS authentication pop-ups do not work reliably in the Drop-In modal.
+
 ### Drop-In Limitations
-- **Apple Pay**: Not supported in Drop-In — use redirect flow instead
+- **Cards not recommended**: 3DS authentication pop-ups cause issues inside the Drop-In modal — use redirect flow for card payments
+- **Apple Pay / Google Pay**: Not supported — use redirect flow instead
 - **Custom styling**: Limited to color and logo customization
 - **Mobile**: Opens as full-screen overlay on mobile devices
 

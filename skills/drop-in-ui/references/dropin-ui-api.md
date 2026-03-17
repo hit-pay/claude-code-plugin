@@ -95,17 +95,19 @@ script-src https://hit-pay.com https://sandbox.hit-pay.com;
 
 The Drop-In UI automatically displays all payment methods enabled on your HitPay account. The customer selects their preferred method within the modal.
 
-**Supported in Drop-In:**
-- Credit/Debit Cards (Visa, Mastercard, Amex)
+**Recommended for Drop-In (QR methods):**
 - PayNow
 - GrabPay
 - ShopeePay
 - FPX
 - Touch 'n Go
-- All other enabled QR methods
+- Other enabled QR methods
 
-**NOT supported in Drop-In:**
-- Apple Pay (use redirect flow instead)
+**NOT recommended for Drop-In:**
+- Credit/Debit Cards — 3DS authentication pop-ups do not work reliably in the modal (use redirect flow)
+- QRIS — use redirect flow or embedded QR instead
+- Apple Pay — not supported (use redirect flow)
+- Google Pay — not supported (use redirect flow)
 
 ## Error Handling
 
