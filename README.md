@@ -56,7 +56,7 @@ Skills are auto-invoked when Claude detects relevant context in your conversatio
 | `/hitpay:init` | Scaffold a complete integration | `/hitpay:init nextjs sg,my` |
 | `/hitpay:methods` | Look up payment methods by country | `/hitpay:methods ph` |
 | `/hitpay:webhook-test` | Generate test webhook payload + curl | `/hitpay:webhook-test charge.created` |
-| `/hitpay:qr-checkout` | Generate QR payment page with scannable codes | `/hitpay:qr-checkout 100 sgd paynow,qris` |
+| `/hitpay:qr-checkout` | Generate QR payment page with scannable codes | `/hitpay:qr-checkout 100 sgd paynow` |
 
 ## MCP Tools
 
@@ -86,6 +86,16 @@ When `HITPAY_API_KEY` is set, Claude can use these tools during development:
 - `create_webhook_event` — Register webhook URL
 - `create_recurring_billing` — Set up subscription
 
+## Hosted HitPay MCP Server
+
+HitPay also runs an official MCP server at `https://mcp.hit-pay.com/` for querying and acting on your live HitPay business: sales, transactions, payouts and balances, plus creating payment links, invoices, products and recurring plans. It signs you in with your HitPay login over OAuth, so there is no API key to set. Only business owners and admins can authorize it.
+
+```bash
+claude mcp add --transport http hitpay https://mcp.hit-pay.com/
+```
+
+Then run `/mcp` and choose **hitpay** to sign in. See the [MCP server docs](https://docs.hitpayapp.com/apis/guide/mcp-server).
+
 ## Supported Markets
 
 | Market | Currency | Key Methods |
@@ -95,7 +105,6 @@ When `HITPAY_API_KEY` is set, Claude can use these tools during development:
 | Philippines | PHP | QR Ph, GCash, ShopeePay |
 | Thailand | THB | PromptPay, TrueMoney |
 | Vietnam | VND | VietQR, ZaloPay |
-| Indonesia | IDR | QRIS |
 | India | INR→SGD | UPI |
 | Australia | AUD | PayTo |
 | Cross-border | Auto FX | 9 borderless QR methods |
